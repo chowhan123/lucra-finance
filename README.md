@@ -1,61 +1,192 @@
 <div align="center">
 
-# Lucra — Finance Intelligence Dashboard
+<br />
 
-**A modern, AI-powered personal finance dashboard built for the Zorvyn Frontend Developer Intern Assessment.**
+<img src="https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+<img src="https://img.shields.io/badge/Recharts-2.10-FF6B6B?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Groq_AI-Llama_3.3_70B-F55036?style=for-the-badge" />
+<img src="https://img.shields.io/badge/CSS-Custom_Properties-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 
-[Features](#-features) · [Quick Start](#-quick-start) · [AI Setup](#-ai-assistant-setup) · [Architecture](#-architecture) · [Design](#-design-system) · [Tech Stack](#-tech-stack)
+<br /><br />
+
+# 💹 Lucra — Finance Intelligence Dashboard
+
+### *A modern, AI-powered personal finance dashboard with real-time insights, role-based access control, and a built-in financial AI assistant.*
+
+<br />
+
+[🚀 Live Demo](https://lucra-finance.vercel.app) · [📸 Screenshots](#-screenshots) · [✨ Features](#-features) · [⚡ Quick Start](#-quick-start) · [🤖 AI Setup](#-ai-assistant-setup) · [🏗️ Architecture](#️-architecture)
+
+<br />
 
 </div>
 
 ---
 
-## Overview
+## 📸 Screenshots
 
-Lucra is a fully interactive finance tracking dashboard that lets users visualize their financial activity, manage transactions, understand spending patterns, and get AI-powered insights — all in a clean, responsive interface with dark and light mode support.
+> **How to add your screenshots:**
+> 1. Run the app locally with `npm run dev`
+> 2. Take screenshots using your OS shortcut:
+>    - **Windows:** `Win + Shift + S` → snip the window → save as PNG
+>    - **Mac:** `Cmd + Shift + 4` → drag to select → saved to Desktop
+> 3. Create a folder called `screenshots/` in the project root
+> 4. Save your images as: `dashboard.png`, `transactions.png`, `insights.png`, `ai-chat.png`, `light-mode.png`
+> 5. The images below will automatically show up on GitHub
 
-The project covers every core requirement of the assignment plus several meaningful enhancements: an AI financial assistant (powered by Groq + Llama 3.3 70B), toast notifications, animated stat counters, CSV export, and full localStorage persistence.
+<br />
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/dashboard.png" alt="Dashboard Overview" width="100%" />
+      <br /><b>📊 Dashboard Overview</b>
+      <br /><sub>Animated stat cards, balance trend, spending breakdown</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/transactions.png" alt="Transactions" width="100%" />
+      <br /><b>💳 Transactions</b>
+      <br /><sub>Search, filter, sort, add/edit/delete with RBAC</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/insights.png" alt="Insights" width="100%" />
+      <br /><b>📈 Financial Insights</b>
+      <br /><sub>KPI cards, category breakdown, observations</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/ai-chat.png" alt="AI Assistant" width="100%" />
+      <br /><b>🤖 Vault AI Assistant</b>
+      <br /><sub>Ask anything about your finances in natural language</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="screenshots/light-mode.png" alt="Light Mode" width="60%" />
+      <br /><b>☀️ Light Mode</b>
+      <br /><sub>Full theme support — persists across sessions</sub>
+    </td>
+  </tr>
+</table>
+
+<br />
 
 ---
 
-## Features
+## ✨ Features
 
-### Core Requirements
+### 🎯 Core Requirements — All Implemented
 
-| Feature | Implementation |
-|---|---|
-| **Dashboard Overview** | 4 animated summary cards (Balance, Income, Expenses, Savings Rate), Balance Trend area chart, Spending Breakdown donut chart, Monthly Income vs Expenses bar chart |
-| **Transactions** | Full table with date, description, category, amount, type — real-time search, category filter, type filter, multi-column sort (date, amount, category) |
-| **Role-Based UI** | Admin role can add, edit, and delete transactions. Viewer role is fully read-only. Switch roles via the sidebar dropdown — no page reload needed |
-| **Insights** | Top spending category card, best saving month card, monthly averages, net savings bar chart, category breakdown with progress bars, 5 auto-generated observation cards |
-| **State Management** | React Context + `useReducer` — all state (transactions, filters, role, theme, sidebar) in a single predictable store |
-| **Responsiveness** | Fully responsive across all screen sizes. Sidebar collapses to a slide-in drawer on mobile. Grid layouts adapt from 4-column to 1-column |
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>What's Built</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>📊 Dashboard Overview</b></td>
+      <td>4 animated summary cards (Balance, Income, Expenses, Savings Rate) · Balance Trend area chart · Spending Breakdown donut chart · Monthly Income vs Expenses bar chart</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>💳 Transactions</b></td>
+      <td>Full data table with date, description, category, amount, type · Real-time search · Category & type filters · Multi-column sort (date, amount, category A–Z)</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>🔐 Role-Based UI</b></td>
+      <td>Admin can add, edit, delete transactions · Viewer is fully read-only · Live role switcher in sidebar — no page reload</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>💡 Insights</b></td>
+      <td>Top spending category · Best saving month · Monthly averages KPI · Net savings bar chart · Category progress bars · 5 auto-generated observation cards</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>🗂️ State Management</b></td>
+      <td>React Context + <code>useReducer</code> — 12 action types, single predictable store for transactions, filters, role, theme, sidebar</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>📱 Responsiveness</b></td>
+      <td>4-col → 2-col → 1-col adaptive grid · Sidebar collapses to slide-in mobile drawer · Transaction table hides non-essential columns on small screens</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><b>🚫 Empty States</b></td>
+      <td>Friendly empty state UI when search/filters return no results or all transactions are deleted</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
 
-### Optional Enhancements
+<br />
 
-| Enhancement | Details |
-|---|---|
-| **AI Financial Assistant** | Chat widget (✦ button, bottom-right) powered by Groq API (Llama 3.3 70B). Reads your actual transaction data on every message — adding a new transaction and asking the AI immediately reflects the updated data |
-| **Dark / Light Mode** | Full theme system using CSS custom properties. Toggle from the sidebar. Preference persists across sessions |
-| **LocalStorage Persistence** | Transactions and settings (theme, role) are saved automatically. Data survives page refreshes and browser restarts |
-| **Toast Notifications** | Contextual feedback for every user action — transaction added, edited, deleted, CSV exported. Auto-dismiss after 3 seconds, click to dismiss early |
-| **Animated Stat Counters** | Dashboard stat cards count up from zero on load using `requestAnimationFrame` with ease-out cubic easing. Re-animates when data changes |
-| **CSV Export** | One-click export of all transactions as a properly formatted CSV file |
-| **Empty State Handling** | Friendly empty states when filters return no results or all transactions are deleted |
+### 🚀 Optional Enhancements — All Implemented
+
+<table>
+  <thead>
+    <tr>
+      <th>Enhancement</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🤖 <b>AI Financial Assistant</b></td>
+      <td>Floating chat widget (✦ button, bottom-right) powered by <b>Groq API + Llama 3.3 70B</b>. Serializes your full transaction history into every API call. Add a new transaction — ask the AI — it reflects the change immediately. Uses a <code>useRef</code> live pointer to prevent stale closure bugs</td>
+    </tr>
+    <tr>
+      <td>🌙 <b>Dark / Light Mode</b></td>
+      <td>Full theme system built on CSS custom properties. A single <code>html.light</code> class swap changes the entire UI. Preference persists to localStorage</td>
+    </tr>
+    <tr>
+      <td>💾 <b>LocalStorage Persistence</b></td>
+      <td>Transactions and settings (theme, role) auto-save. Data survives page refreshes and browser restarts. Uses separate keys: <code>lucra_transactions</code> and <code>lucra_settings</code></td>
+    </tr>
+    <tr>
+      <td>🔔 <b>Toast Notifications</b></td>
+      <td>4-type toast system (success, error, info, warning) with spring-physics enter animation, slide-out exit. Fires on every CRUD action and CSV export. Click to dismiss early, auto-dismiss after 3s</td>
+    </tr>
+    <tr>
+      <td>🔢 <b>Animated Stat Counters</b></td>
+      <td>All 4 dashboard cards count up from zero on load using <code>requestAnimationFrame</code> with ease-out cubic easing. Re-animates whenever transaction data changes</td>
+    </tr>
+    <tr>
+      <td>📥 <b>CSV Export</b></td>
+      <td>One-click export of all transactions as a properly formatted, comma-separated CSV file. Triggers a toast notification with the row count</td>
+    </tr>
+    <tr>
+      <td>✂️ <b>Text Truncation</b></td>
+      <td>Long transaction descriptions truncate cleanly with ellipsis — edit/delete buttons always visible. Full text shown on native hover tooltip via <code>title</code> attribute</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 ### Prerequisites
 
-- Node.js 18 or higher
-- npm 9 or higher
+```
+Node.js  ≥ 18.0
+npm      ≥ 9.0
+```
 
-### Installation
+### Installation & Run
 
 ```bash
-# 1. Extract the project folder
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/lucra-finance.git
 cd lucra-finance
 
 # 2. Install dependencies
@@ -65,301 +196,422 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
+
+> ✅ The app works immediately — only the AI Assistant requires an API key (see below). All other features are fully functional without any setup.
+
+### Other Commands
 
 ```bash
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run preview
+npm run build      # Production build → /dist
+npm run preview    # Preview production build locally
 ```
-
-> The app works fully without an API key — only the AI Assistant feature requires one. All other features are available immediately after `npm install && npm run dev`.
 
 ---
 
-## AI Assistant Setup
+## 🤖 AI Assistant Setup
 
-The AI Assistant uses the **Groq API** which is completely free — no credit card required.
+The AI Assistant is powered by **Groq** — completely free, no credit card required.
 
-### Step 1 — Get a free API key
+### Get Your Free API Key (2 minutes)
 
-1. Go to [console.groq.com](https://console.groq.com)
-2. Sign up with Google or email (free)
-3. Navigate to **API Keys** → **Create API Key**
-4. Copy the key (starts with `gsk_...`)
+```
+1. Visit    →  https://console.groq.com
+2. Sign up  →  Continue with Google (fastest)
+3. Navigate →  API Keys → Create API Key
+4. Copy     →  key starts with gsk_...
+```
 
-### Step 2 — Create your `.env` file
-
-In the project root folder, create a file named `.env`:
+### Configure the Project
 
 ```bash
-# Option A: Using the terminal
+# Step 1 — Copy the template
 cp .env.example .env
-```
 
-Then open `.env` and replace the placeholder:
+# Step 2 — Open .env and paste your key
+VITE_GROQ_API_KEY=gsk_paste_your_key_here
 
-```env
-VITE_GROQ_API_KEY=gsk_paste_your_actual_key_here
-```
-
-### Step 3 — Restart the dev server
-
-```bash
-# Stop the running server (Ctrl+C), then:
+# Step 3 — Restart the dev server (required — Vite reads .env at startup)
 npm run dev
 ```
 
-> **Important:** Vite only reads `.env` files on startup. You must restart the server after creating or editing `.env`.
+> 🔒 The `.env` file is in `.gitignore` — your API key is never committed to GitHub
 
-### Using the AI Assistant
+### How It Works
 
-- Click the **✦** button in the bottom-right corner
-- Use the suggested prompt chips for quick questions
-- Or type any question about your finances
-- The AI reads your full transaction history on every message — adding new transactions is reflected immediately
-- Click **Clear** to reset the conversation
-- Press **Enter** to send, **Shift+Enter** for a new line
+```
+User sends message
+        │
+        ▼
+transactionsRef.current  ←── Always the latest data (useRef live pointer)
+        │
+        ▼
+buildSystemPrompt(transactions)
+   ├── Total income, expenses, balance, savings rate
+   ├── Top spending categories with amounts
+   ├── Recent 10 transactions
+   └── Full transaction JSON array
+        │
+        ▼
+Groq API → Llama 3.3 70B Versatile
+        │
+        ▼
+Response streamed back to chat UI
+```
 
-**Example questions:**
-- *"What's my highest spending category this month?"*
-- *"Give me 3 tips based on my spending habits"*
-- *"Compare my income vs expenses over the last 3 months"*
-- *"Which month had the best savings rate?"*
+### Example Prompts
 
-> The `.env` file is listed in `.gitignore` and will never be committed to version control.
+```
+"What's my highest spending category?"
+"Give me 3 tips based on my spending habits"
+"Which month had the best savings rate?"
+"How much did I spend on food last month?"
+"Am I saving enough each month?"
+"Compare my income vs expenses over the last 3 months"
+```
+
+### Deploying with AI Enabled (Vercel)
+
+```
+Vercel Dashboard
+  → Your Project
+    → Settings
+      → Environment Variables
+        → Add: VITE_GROQ_API_KEY = gsk_your_key
+          → Redeploy
+```
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ### Project Structure
 
 ```
 lucra-finance/
-├── index.html                   # HTML entry point, loads Google Fonts
-├── vite.config.js               # Vite configuration
-├── package.json
-├── .env.example                 # API key template
-├── .gitignore
-└── src/
-    ├── main.jsx                 # React root — mounts App into #root
-    ├── App.jsx                  # Layout shell: providers + sidebar + header + tab routing
-    ├── data/
-    │   └── mockData.js          # 48 realistic transactions (Nov 2025–Mar 2026)
-    │                            # + CATEGORIES, CATEGORY_COLORS, CATEGORY_ICONS
-    ├── utils/
-    │   └── helpers.js           # Pure utility functions:
-    │                            #   formatCurrency, formatShort, formatDate
-    │                            #   getMonthlyData, getBalanceTrend
-    │                            #   getCategorySpending, getInsights
-    │                            #   exportToCSV, generateId
-    ├── context/
-    │   ├── AppContext.jsx        # Global state: useReducer + localStorage sync
-    │   └── ToastContext.jsx      # Toast notification system: provider + UI
-    ├── components/
-    │   ├── Sidebar.jsx           # Logo, navigation, role switcher, theme toggle
-    │   ├── Header.jsx            # Page title, current date, CSV export button
-    │   ├── Dashboard.jsx         # Animated stat cards + 3 Recharts visualizations
-    │   ├── Transactions.jsx      # Filter bar + sortable transaction table
-    │   ├── TransactionModal.jsx  # Add / Edit modal with form validation
-    │   ├── Insights.jsx          # KPI cards, bar chart, progress bars, observations
-    │   └── AIAssistant.jsx       # Floating chat widget — Groq API integration
-    └── styles/
-        └── index.css             # All styles: CSS custom properties, components,
-                                  # dark/light themes, animations, responsive breakpoints
+│
+├── 📄 index.html                  # HTML entry point — loads Google Fonts
+├── ⚙️  vite.config.js              # Vite config
+├── 📦 package.json
+├── 🔐 .env.example                # API key template (safe to commit)
+├── 🚫 .gitignore                  # Excludes .env, node_modules, dist
+│
+└── 📁 src/
+    │
+    ├── 🚀 main.jsx                # React root — mounts <App /> into #root
+    ├── 🏠 App.jsx                 # Layout shell: providers + sidebar + routing
+    │
+    ├── 📁 data/
+    │   └── mockData.js            # 48 realistic transactions (Nov 2025–Mar 2026)
+    │                              # CATEGORIES · CATEGORY_COLORS · CATEGORY_ICONS
+    │
+    ├── 📁 utils/
+    │   └── helpers.js             # Pure utility functions (no side effects)
+    │                              # formatCurrency · formatShort · formatDate
+    │                              # getMonthlyData · getBalanceTrend
+    │                              # getCategorySpending · getInsights
+    │                              # exportToCSV · generateId
+    │
+    ├── 📁 context/
+    │   ├── AppContext.jsx          # Global state — useReducer + localStorage sync
+    │   └── ToastContext.jsx        # Toast provider + animated toast UI
+    │
+    ├── 📁 components/
+    │   ├── Sidebar.jsx             # SVG logo, nav icons, role switcher, theme toggle
+    │   ├── Header.jsx              # Page title, date, CSV export button
+    │   ├── Dashboard.jsx           # Animated stat cards + 3 Recharts charts
+    │   ├── Transactions.jsx        # Filter bar + sortable/searchable table
+    │   ├── TransactionModal.jsx    # Add / Edit modal with form validation
+    │   ├── Insights.jsx            # KPI cards · bar chart · progress bars · observations
+    │   └── AIAssistant.jsx         # Floating chat widget — Groq API integration
+    │
+    └── 📁 styles/
+        └── index.css               # Complete design system:
+                                    # CSS custom properties · dark/light themes
+                                    # All component styles · animations
+                                    # Responsive breakpoints
 ```
 
-### State Management
+### State Management Deep Dive
 
-All application state is managed in a single `AppContext` using React's `useReducer` hook:
+All application state lives in a single `AppContext` powered by `useReducer`:
 
 ```js
-// State shape
+// Complete state shape
 {
-  transactions: Transaction[],   // Full transaction list
-  role: 'admin' | 'viewer',      // Active user role
-  darkMode: boolean,             // Theme preference
-  activeTab: string,             // Current page (dashboard | transactions | insights)
-  sidebarOpen: boolean,          // Mobile sidebar visibility
+  transactions: Transaction[],     // Full transaction list (persisted)
+  role:         'admin' | 'viewer', // Active user role (persisted)
+  darkMode:     boolean,           // Theme preference (persisted)
+  activeTab:    string,            // Current page
+  sidebarOpen:  boolean,           // Mobile drawer state
   filters: {
-    search: string,              // Description/category search query
-    category: string,            // Category filter ('all' or specific)
-    type: string,                // Type filter ('all' | 'income' | 'expense')
-    sortBy: string,              // Sort field (date | amount | category)
-    sortOrder: string,           // Sort direction (asc | desc)
+    search:    string,             // Real-time search query
+    category:  string,             // 'all' or specific category
+    type:      string,             // 'all' | 'income' | 'expense'
+    sortBy:    string,             // 'date' | 'amount' | 'category'
+    sortOrder: string,             // 'asc' | 'desc'
   }
 }
 ```
 
-**Why `useReducer` over multiple `useState` calls?**
-
-The state has 6+ interdependent fields with multiple discrete action types (12 actions total). A reducer makes every state transition explicit and traceable. It also makes it straightforward to add new actions in the future without hunting through multiple state setters.
-
-**Persistence strategy:**
-
-Two `useEffect` hooks sync state to `localStorage` — one for transactions, one for settings (theme + role). They fire only when their specific slice changes, avoiding unnecessary writes.
+**12 action types handled by the reducer:**
 
 ```js
-useEffect(() => {
-  localStorage.setItem('lucra_transactions', JSON.stringify(state.transactions));
-}, [state.transactions]);
+SET_ROLE            // Switch between admin and viewer
+TOGGLE_DARK_MODE    // Flip theme
+SET_ACTIVE_TAB      // Navigate between pages
+TOGGLE_SIDEBAR      // Mobile drawer open
+CLOSE_SIDEBAR       // Mobile drawer close
+ADD_TRANSACTION     // Append new transaction with generated ID
+EDIT_TRANSACTION    // Replace transaction by ID
+DELETE_TRANSACTION  // Remove transaction by ID
+RESET_TRANSACTIONS  // Restore original 48 mock transactions
+SET_FILTER          // Partial filter update (patch)
+RESET_FILTERS       // Restore all filters to defaults
 ```
+
+**Why `useReducer` over `useState`?**
+
+With 6 state slices and 12 action types, multiple `useState` calls would scatter logic across the component tree. A reducer centralizes every state transition in one pure function — explicit, predictable, and easy to trace during debugging.
 
 ### Data Flow
 
 ```
-User Action
-    │
-    ▼
-Component (dispatch)
-    │
-    ▼
-AppReducer (pure function — returns new state)
-    │
-    ▼
-AppContext (new state distributed to all subscribers)
-    │
-    ├──▶ Components re-render with new data
-    └──▶ useEffect persists to localStorage
+User Interaction
+      │
+      ▼
+  dispatch(action)
+      │
+      ▼
+  appReducer(state, action)  ──→  returns new state (pure, no side effects)
+      │
+      ▼
+  AppContext.Provider         ──→  all subscribers re-render
+      │
+      ├──▶  Components receive new state via useApp()
+      │
+      └──▶  useEffect watchers
+              ├── transactions changed  →  localStorage.setItem('lucra_transactions')
+              └── darkMode/role changed →  localStorage.setItem('lucra_settings')
 ```
 
 ---
 
-## Design System
+## 🎨 Design System
 
-**Brand:** Lucra (from Latin *lucrum* — profit, gain)
+**Brand:** Lucra *(from Latin* lucrum *— profit, gain)*
 
 ### Color Palette
 
-| Token | Dark Mode | Light Mode | Usage |
+| Token | Dark | Light | Usage |
 |---|---|---|---|
 | `--bg-base` | `#09090d` | `#f0f0f7` | Page background |
 | `--bg-card` | `#13131a` | `#ffffff` | Card surfaces |
 | `--bg-surface` | `#1c1c25` | `#f0f0f7` | Table headers, inputs |
-| `--accent` | `#7c5cfc` | `#6248e8` | Primary actions, active states |
-| `--positive` | `#23d18b` | `#16a06a` | Income, positive values |
-| `--negative` | `#f25c7e` | `#e02b57` | Expenses, negative values |
-| `--warning` | `#f5a623` | `#c97e08` | Savings rate, warnings |
+| `--accent` | `#7c5cfc` | `#6248e8` | Primary CTA, active nav, gradients |
+| `--accent-light` | `#9b82fd` | `#7c63f0` | Gradient endpoint, hover states |
+| `--positive` | `#23d18b` | `#16a06a` | Income values, success states |
+| `--negative` | `#f25c7e` | `#e02b57` | Expense values, delete actions |
+| `--warning` | `#f5a623` | `#c97e08` | Savings rate, caution states |
+| `--border` | `rgba(255,255,255,0.07)` | `rgba(0,0,0,0.08)` | All borders |
+| `--text-primary` | `#eeeef5` | `#111118` | Headings, important text |
+| `--text-secondary` | `#8a8a9e` | `#52526a` | Labels, descriptions |
+| `--text-muted` | `#44445a` | `#9090a8` | Hints, timestamps |
 
-**Why violet instead of the typical teal/blue?** Teal is the single most overused color in finance dashboard templates. Violet (`#7c5cfc`) is distinctive, premium, and used by modern developer tools like Linear and Raycast — it signals intentional design thinking.
+> **Why violet?** Teal (`#00d4aa`) is the single most overused accent in finance dashboard templates. Violet (`#7c5cfc`) is distinctive, premium, and signals intentional design thinking. Used by Linear, Raycast, and other modern dev tools.
 
 ### Typography
 
 | Font | Usage | Why |
 |---|---|---|
-| **Syne** | Headings, brand name, section titles | Geometric, distinctive, stands out in dashboards |
-| **IBM Plex Mono** | All financial numbers, dates | Monospace ensures numbers align vertically in tables |
-| **DM Sans** | Body text, labels, UI copy | Clean, highly readable at small sizes |
+| **Syne** | Brand name, headings, section titles | Geometric, distinctive — stands out without being decorative |
+| **IBM Plex Mono** | All financial numbers, dates, code | Monospace ensures numbers align vertically in tables and cards |
+| **DM Sans** | Body text, labels, navigation, UI copy | Highly legible at 11–14px — the sweet spot for dashboard interfaces |
 
 ### CSS Architecture
 
-All styling is hand-written CSS with zero external UI frameworks. The system uses:
+Zero CSS frameworks. Zero UI component libraries. Every style is hand-written using:
 
-- **CSS Custom Properties** for theming — a single class (`html.light`) swaps the entire theme
-- **5-level surface system** — base → secondary → card → card-hover → surface — each element sits on the correct depth layer
-- **White-on-dark borders** — `rgba(255,255,255,0.07)` instead of solid gray lines — the correct pattern for dark UIs
-- **Inset top highlight** — `inset 0 1px 0 rgba(255,255,255,0.04)` on cards — a single line that makes cards appear three-dimensional
+- **5-level surface depth system** — `base → secondary → card → card-hover → surface`
+  Each element sits at exactly the right visual depth instead of everything being the same flat color
+
+- **White-on-dark borders** — `rgba(255,255,255,0.07)` instead of solid grays
+  The standard technique used in Vercel, Supabase, PlanetScale dark UIs
+
+- **Inset top highlight** — `inset 0 1px 0 rgba(255,255,255,0.04)` on every card
+  A single CSS line that makes cards appear three-dimensional with minimal visual noise
+
 - **True frosted glass header** — `backdrop-filter: blur(20px) saturate(1.6)` at 82% opacity
+  Content scrolls beneath the header with a premium blur effect
+
+- **Gradient primary buttons** — `linear-gradient(135deg, accent, accent-light)`
+  Paired with a colored `box-shadow` glow — avoids the flat "AI-generated" button look
+
+- **Dark tooltips always** — Recharts tooltips are hardcoded dark (`#1a1a26`)
+  Regardless of light/dark mode — dark tooltips on light charts is the correct UX pattern
+  used by Figma, Linear, and Notion
 
 ---
 
-## Tech Stack
+## 🧰 Tech Stack
 
-| Technology | Version | Purpose |
-|---|---|---|
-| **React** | 18.2 | UI framework — functional components + hooks throughout |
-| **Vite** | 5.0 | Build tool — instant HMR, fast cold starts |
-| **Recharts** | 2.10 | Charts — AreaChart, BarChart, PieChart with custom tooltips |
-| **Groq API** | — | AI inference — Llama 3.3 70B Versatile (free tier) |
-| **Google Fonts** | — | Syne, IBM Plex Mono, DM Sans |
+| Technology | Version | Purpose | Why Chosen |
+|---|---|---|---|
+| **React** | 18.2 | UI framework | Component model, hooks, Context API |
+| **Vite** | 5.0 | Build tooling | Instant HMR, fast cold starts, ESM-native |
+| **Recharts** | 2.10 | Data visualization | Composable React charts, custom tooltip support |
+| **Groq API** | — | AI inference | Free tier, fastest Llama 3.3 70B inference available |
+| **Google Fonts** | — | Typography | Syne + IBM Plex Mono + DM Sans |
+| **CSS Custom Properties** | — | Theming | Native browser support, no runtime overhead |
 
-No CSS frameworks (Tailwind, MUI, Bootstrap). No state management libraries (Redux, Zustand). No routing libraries. Every dependency is justified — nothing was added without a clear reason.
-
----
-
-## Mock Data
-
-48 transactions spanning **November 2025 → March 2026** across 8 categories:
-
-| Category | Type | Typical Amount |
-|---|---|---|
-| Salary | Income | ₹80,000–₹95,000 |
-| Freelance | Income | ₹15,000–₹40,000 |
-| Food | Expense | ₹200–₹2,500 |
-| Transport | Expense | ₹150–₹3,000 |
-| Shopping | Expense | ₹500–₹8,000 |
-| Entertainment | Expense | ₹300–₹2,000 |
-| Health | Expense | ₹500–₹5,000 |
-| Utilities | Expense | ₹800–₹3,500 |
-
-The data is realistic enough to make insights meaningful — the Insights page surfaces genuine patterns (e.g. Food consistently being the top expense category, savings rate varying month to month).
+**Deliberately excluded:**
+- ❌ Tailwind CSS — inline utility classes hurt readability in component files
+- ❌ Redux / Zustand — `useReducer` + Context is sufficient for this scope
+- ❌ React Router — tab-based navigation doesn't need URL routing
+- ❌ Axios — native `fetch` is sufficient for two API endpoints
 
 ---
 
-## Key Design Decisions & Assumptions
+## 📊 Mock Data
 
-- **Currency:** Indian Rupees (INR), formatted with `en-IN` locale (`₹1,20,000` style)
-- **Balance definition:** Cumulative net balance (all-time income minus all-time expenses), not a running bank balance
-- **Insights computation:** Calculated across all available data, not limited to the current month — this gives more meaningful trends with the available dataset
-- **Role switching:** Frontend-only simulation, no authentication — as specified in the assignment
-- **AI context:** The full transaction dataset is serialized into the system prompt on every API call, ensuring the AI always has current data including any newly added transactions
-- **Chart tooltips:** Hardcoded dark style (`#1a1a26` background) regardless of app theme — dark tooltips on light backgrounds is the correct UX pattern used by Figma, Linear, and Notion
+**48 realistic transactions** spanning November 2025 → March 2026
 
----
+| Category | Type | Range | Color |
+|---|---|---|---|
+| 💼 Salary | Income | ₹80,000–₹95,000/mo | `#7c5cfc` |
+| 💻 Freelance | Income | ₹15,000–₹40,000 | `#a78bfa` |
+| 🍽️ Food | Expense | ₹200–₹2,500 | `#f5a623` |
+| 🚗 Transport | Expense | ₹150–₹3,000 | `#4a9eff` |
+| 🛍️ Shopping | Expense | ₹500–₹8,000 | `#f472b6` |
+| 🎬 Entertainment | Expense | ₹300–₹2,000 | `#c084fc` |
+| ❤️ Health | Expense | ₹500–₹5,000 | `#23d18b` |
+| ⚡ Utilities | Expense | ₹800–₹3,500 | `#22d3ee` |
 
-## Testing the Features
-
-### Role-Based Access
-1. Sidebar → Role dropdown → switch to **Viewer**
-2. Go to Transactions → Add Transaction button disappears, edit/delete icons hidden
-3. Switch back to **Admin** → full access restored
-
-### AI Assistant
-1. Click **✦** button (bottom-right)
-2. Try a suggested prompt or ask your own question
-3. Add a new transaction via Transactions tab
-4. Return to AI chat → ask about your data — the new transaction is reflected immediately
-
-### Dark / Light Mode
-1. Sidebar → **Light Mode** button
-2. Every chart, tooltip, card, and text element should remain readable
-3. Toggle back to Dark Mode — preference is saved automatically
-
-### Persistence
-1. Add a custom transaction
-2. Close and reopen the browser tab
-3. The transaction is still there (stored in localStorage)
+The data is realistic enough that the Insights page surfaces genuine patterns — Food consistently ranks as the top expense category, savings rate varies meaningfully month to month, making the AI assistant responses actually useful.
 
 ---
 
-## Development Notes
+## 🧪 Manual Testing Guide
 
-```bash
-# Install dependencies
-npm install
+### Role-Based Access Control
 
-# Start dev server (http://localhost:5173)
-npm run dev
-
-# Type check
-npm run lint
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
+```
+1. Sidebar → Role dropdown → switch to "Viewer"
+2. Transactions tab → "Add Transaction" button disappears
+3. All edit (✏️) and delete (🗑️) icons are hidden
+4. Switch back to "Admin" → full access restored instantly
 ```
 
-The project has no TypeScript — kept to plain JavaScript as the assignment focus is UI/UX and frontend architecture, not type safety.
+### AI Assistant (requires API key)
+
+```
+1. Click ✦ button (bottom-right corner)
+2. Try a suggestion chip or type your own question
+3. Add a new transaction via Transactions tab
+4. Return to AI chat → ask about the new data
+   → The response reflects your new transaction immediately
+```
+
+### Dark / Light Mode
+
+```
+1. Sidebar → "Light Mode" button
+2. Check: all charts readable ✓ tooltips visible ✓ text contrast ✓
+3. Hover chart bars/segments → tooltip always dark background, white text
+4. Refresh page → theme preference is remembered
+```
+
+### LocalStorage Persistence
+
+```
+1. Add a custom transaction with a unique description
+2. Close the browser tab completely
+3. Reopen http://localhost:5173
+4. Custom transaction is still there ✓
+```
+
+### Text Truncation
+
+```
+1. Add Transaction → enter a very long description (50+ chars)
+2. Save → find the row in the table
+3. Description truncates with "..." at the end ✓
+4. Edit (✏️) and delete (🗑️) buttons still fully visible ✓
+5. Hover the truncated text → full description shown in browser tooltip ✓
+```
+
+### CSV Export
+
+```
+1. Header → "↓ Export CSV" button
+2. File downloads automatically
+3. Toast notification: "Exported 48 transactions as CSV" ✓
+4. Open the file in Excel/Sheets → all columns present ✓
+```
+
+---
+
+## 🔑 Key Design Decisions
+
+| Decision | Reasoning |
+|---|---|
+| **Currency: INR** | `en-IN` locale formatting (₹1,20,000 style) — relevant to Indian market context |
+| **Balance = all-time net** | Total income minus total expenses, not a running bank balance — more meaningful with the dataset |
+| **Insights across all data** | Computing trends across 5 months gives more useful patterns than restricting to current month |
+| **useRef for AI transactions** | Prevents stale closure bug in async `sendMessage` — `transactionsRef.current` always points to latest state |
+| **Dark tooltips in light mode** | Hardcoded dark tooltip background regardless of theme — this is the correct UX pattern (Figma, Linear, Notion all do this) |
+| **No routing library** | Three tabs don't need URL routing — adds unnecessary complexity |
+| **Groq over OpenAI** | Free tier, faster inference, no credit card — removes friction for evaluators testing the feature |
+
+---
+
+## 🚀 Deployment
+
+### Live on Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+```bash
+# Option A — Vercel CLI
+npm i -g vercel
+vercel
+
+# Option B — GitHub Integration (recommended)
+# 1. Push to GitHub
+# 2. Import repo at vercel.com/new
+# 3. Add VITE_GROQ_API_KEY in Environment Variables
+# 4. Click Deploy
+```
+
+> Every `git push` to `main` triggers an automatic redeploy on Vercel
+
+---
+
+## 📁 Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `VITE_GROQ_API_KEY` | For AI feature only | Free key from [console.groq.com](https://console.groq.com) |
+
+```bash
+# .env (never commit this file)
+VITE_GROQ_API_KEY=gsk_your_key_here
+```
+
+---
+
+## 📜 License
+
+Built for the **Zorvyn Frontend Developer Intern Assessment**.
 
 ---
 
 <div align="center">
 
-Built for the **Zorvyn Frontend Developer Intern Assessment**
+**Made with React, Recharts, Groq AI, and hand-crafted CSS**
+
+<br />
+
+⭐ If you found this useful, consider starring the repository
 
 </div>
