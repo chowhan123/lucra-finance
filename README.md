@@ -16,7 +16,7 @@
 
 <br />
 
-[🚀 Live Demo](https://lucra-finance.vercel.app) · [📸 Screenshots](#-screenshots) · [✨ Features](#-features) · [⚡ Quick Start](#-quick-start) · [🤖 AI Setup](#-ai-assistant-setup) · [🏗️ Architecture](#️-architecture)
+[🚀 Live Demo](https://finance-dashboard-self-rho.vercel.app/) · [📸 Screenshots](#-screenshots) · [✨ Features](#-features) · [⚡ Quick Start](#-quick-start) · [🤖 AI Setup](#-ai-assistant-setup) · [🏗️ Architecture](#️-architecture)
 
 <br />
 
