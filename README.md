@@ -28,17 +28,17 @@
 
 <div align="center">
 
-<img src="screenshots/dashboard.png" alt="Dashboard Overview" width="90%" />
+<img width="1919" height="946" alt="Image" src="https://github.com/user-attachments/assets/bcb42e32-4964-4bb8-a855-10b9aed43a3a" />
 <br /><br />
 <b>📊 Dashboard Overview</b> — Animated stat cards, balance trend chart, spending breakdown
 <br /><br /><br />
 
-<img src="screenshots/transactions.png" alt="Transactions" width="90%" />
+<img width="1916" height="950" alt="Image" src="https://github.com/user-attachments/assets/d199094d-18e7-4289-8ba0-4c36b963089c" />
 <br /><br />
 <b>💳 Transactions</b> — Search, filter, sort · Add / Edit / Delete (Admin only)
 <br /><br /><br />
 
-<img src="screenshots/insights.png" alt="Financial Insights" width="90%" />
+<img width="1908" height="947" alt="Image" src="https://github.com/user-attachments/assets/65e5b918-94a4-49c8-80ca-7ec556af8ab5" />
 <br /><br />
 <b>💡 Financial Insights</b> — Top category, best saving month, monthly income vs expenses
 
