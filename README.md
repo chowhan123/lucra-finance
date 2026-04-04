@@ -28,19 +28,19 @@
 
 ## 📋 Table of Contents
 
-- 📸 Screenshots
-- ✨ Features
-- ⚡ Quick Start
-  - Prerequisites
-  - Installation
-- 🤖 AI Assistant Setup
-- 🏗️ Architecture
-  - Repository Structure
-  - State Management
-- 🔐 Role-Based Access
-- 🌍 Environment Variables
-- 🚀 Deployment
-- 📌 Developer Notes
+- [📸 Screenshots](#-screenshots)
+- [✨ Features](#-features)
+- [⚡ Quick Start](#-quick-start)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [🤖 AI Assistant Setup](#-ai-assistant-setup)
+- [🏗️ Architecture](#️-architecture)
+  - [Repository Structure](#repository-structure)
+  - [State Management](#state-management)
+- [🔐 Role-Based Access](#-role-based-access)
+- [🌍 Environment Variables](#-environment-variables)
+- [🚀 Deployment](#-deployment)
+- [📌 Developer Notes](#-developer-notes)
 
 ---
 
