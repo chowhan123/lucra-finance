@@ -8,9 +8,7 @@
 
 <br /><br />
 
-<img width="60" src="https://img.shields.io/badge/💹-Lucra-7c5cfc?style=for-the-badge" />
-
-# Lucra
+# 💹 Lucra
 
 ### Finance Intelligence Dashboard
 
@@ -23,24 +21,6 @@
 <br />
 
 </div>
-
----
-
-## 📋 Table of Contents
-
-- [📸 Screenshots](#-screenshots)
-- [✨ Features](#-features)
-- [⚡ Quick Start](#-quick-start)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [🤖 AI Assistant Setup](#-ai-assistant-setup)
-- [🏗️ Architecture](#️-architecture)
-  - [Repository Structure](#repository-structure)
-  - [State Management](#state-management)
-- [🔐 Role-Based Access](#-role-based-access)
-- [🌍 Environment Variables](#-environment-variables)
-- [🚀 Deployment](#-deployment)
-- [📌 Developer Notes](#-developer-notes)
 
 ---
 
